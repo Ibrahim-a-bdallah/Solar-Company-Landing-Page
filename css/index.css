@@ -450,16 +450,18 @@ header {
                             right: -1px;
                             position: absolute;
                             background-color: var(--therd-color);
-                            transform: rotate(-40deg);
+
                         }
 
                         &::after {
                             top: 3px;
+                            transform: rotate(-40deg);
                         }
 
 
                         &::before {
                             top: -3px;
+                            transform: rotate(40deg);
                         }
 
                     }
