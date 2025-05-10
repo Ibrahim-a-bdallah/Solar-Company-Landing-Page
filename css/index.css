@@ -119,6 +119,67 @@ body {
     cursor: pointer;
 }
 
+.box {
+    h2 {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    p {
+        color: #475467;
+        padding-top: 8px;
+        padding-bottom: 20px;
+    }
+
+    button {
+        color: var(--therd-color);
+        background: none;
+        padding: 5px 0;
+
+        span {
+            width: 20px;
+            height: 3px;
+            border-radius: 6px;
+            right: -27px;
+            position: absolute;
+            background-color: var(--therd-color);
+            bottom: 12px;
+            transition: .3s;
+
+            &::after,
+            &::before {
+                content: "";
+                border-radius: 6px;
+                width: 10px;
+                height: 2px;
+                right: -1px;
+                position: absolute;
+                background-color: var(--therd-color);
+
+            }
+
+            &::after {
+                top: 3px;
+                transform: rotate(-40deg);
+            }
+
+            &::before {
+                top: -3px;
+                transform: rotate(40deg);
+            }
+        }
+
+
+    }
+
+    &:hover span {
+        transform: rotate(-28deg);
+    }
+}
+
+
+
 /* start header style  */
 header {
     background-color: var(--main-color);
@@ -229,7 +290,7 @@ header {
         width: 332px;
         height: 24px;
         top: 69px;
-        left: 150px;
+        left: 50px;
 
         span:nth-child(2) {
             display: inline-block;
@@ -406,13 +467,6 @@ header {
             .text {
                 padding: 20px;
 
-
-                h2 {
-                    font-weight: 600;
-                    font-size: 20px;
-                    line-height: 30px;
-                }
-
                 p {
                     color: #475467;
                     width: 318px;
@@ -424,54 +478,8 @@ header {
                 }
 
                 button {
-                    color: var(--therd-color);
-                    background: none;
                     position: relative;
-                    padding: 5px 0;
-
-                    span {
-                        width: 20px;
-                        height: 3px;
-                        border-radius: 6px;
-                        right: -27px;
-                        position: absolute;
-                        background-color: var(--therd-color);
-                        bottom: 12px;
-                        transition: .3s;
-
-
-
-                        &::after,
-                        &::before {
-                            content: "";
-                            border-radius: 6px;
-                            width: 10px;
-                            height: 2px;
-                            right: -1px;
-                            position: absolute;
-                            background-color: var(--therd-color);
-
-                        }
-
-                        &::after {
-                            top: 3px;
-                            transform: rotate(-40deg);
-                        }
-
-
-                        &::before {
-                            top: -3px;
-                            transform: rotate(40deg);
-                        }
-
-                    }
-
-
                 }
-            }
-
-            &:hover span {
-                transform: rotate(-28deg);
             }
         }
     }
@@ -548,65 +556,10 @@ header {
                         height: 49px;
                     }
                 }
-
-                h2 {
-                    font-weight: 600;
-                    font-size: 20px;
-                    line-height: 30px;
-                }
-
-                p {
-                    color: #475467;
-                    padding-top: 8px;
-                    padding-bottom: 20px;
-                }
-
-                button {
-                    color: var(--therd-color);
-                    background: none;
-                    padding: 5px 0;
-
-                    span {
-                        width: 20px;
-                        height: 3px;
-                        border-radius: 6px;
-                        right: -27px;
-                        position: absolute;
-                        background-color: var(--therd-color);
-                        bottom: 12px;
-                        transition: .3s;
-
-                        &::after,
-                        &::before {
-                            content: "";
-                            border-radius: 6px;
-                            width: 10px;
-                            height: 2px;
-                            right: -1px;
-                            position: absolute;
-                            background-color: var(--therd-color);
-                            transform: rotate(-40deg);
-                        }
-
-                        &::after {
-                            top: 3px;
-                        }
-
-                        &::before {
-                            top: -3px;
-                        }
-                    }
-
-
-                }
-            }
-
-            &:hover span {
-                transform: rotate(-28deg);
             }
         }
-    }
 
+    }
 }
 
 /* end energy_innovators style  */
@@ -784,6 +737,10 @@ footer {
                     margin-bottom: 38px;
                 }
 
+                ul {
+                    font-size: 17px;
+                }
+
                 a {
                     color: var(--white-color);
                 }
@@ -863,15 +820,44 @@ footer {
     }
 }
 
+
+/*  media query for mobile devices */
+
+@media (max-width: 400px) {
+    .line {
+        left: 0 !important;
+    }
+
+    .links ul {
+        font-size: 13px !important;
+    }
+
+    footer {
+        .input {
+
+            :last-child {
+                padding: 2px 6px !important;
+                font-size: 10px !important;
+            }
+        }
+    }
+}
+
 @media (min-width:576px) {
     .container {
         width: 540px;
     }
 }
 
+
+/* media query for tablet devices  */
 @media (min-width:768px) {
     .container {
         width: 720px;
+    }
+
+    .line {
+        left: 150px !important;
     }
 
     .trade {
@@ -909,6 +895,7 @@ footer {
 }
 
 
+/* media query for desktop devices */
 @media (min-width:992px) {
     .container {
         width: 960px;
@@ -966,7 +953,7 @@ footer {
 }
 
 
-
+/* media queries for responsive design */
 @media (min-width:1200px) {
     .container {
         width: 1140px;
@@ -989,6 +976,7 @@ footer {
     }
 }
 
+/* media query for large devices */
 @media (min-width:1400px) {
     .container {
         width: 1320px;
